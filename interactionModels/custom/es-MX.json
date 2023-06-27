@@ -1,0 +1,173 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "name",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1660093157828.1082427582913"
+              }
+            }
+          ],
+          "name": "GuardarNombreIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "respuesta",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1466128867287.861588311594.1339402893035"
+                }
+              ],
+              "type": "respuestas",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1466128867287.861588311594"
+              }
+            }
+          ],
+          "name": "GuardarRespuestaIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "GuardarNombreIntent",
+          "samples": [
+            "mi nombre es {name}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "respuesta",
+              "type": "respuestas"
+            }
+          ],
+          "name": "GuardarRespuestaIntent",
+          "samples": [
+            "es la {respuesta}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "IniciarCuestionarioIntent",
+          "samples": [
+            "comenzar",
+            "iniciar cuestionario"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "ContinarCuestionarioIntent",
+          "samples": [
+            "otra",
+            "siguiente pregunta",
+            "la que sigue",
+            "siguiente"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "TerminarCuestionarioIntent",
+          "samples": [
+            "finalizar",
+            "terminar cuestionario",
+            "terminar"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "tres"
+              },
+              "id": "3"
+            },
+            {
+              "name": {
+                "value": "dos"
+              },
+              "id": "2"
+            },
+            {
+              "name": {
+                "value": "uno"
+              },
+              "id": "1"
+            }
+          ],
+          "name": "respuestas"
+        }
+      ],
+      "invocationName": "cuestionario kevin"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "por favor, dime tu nombre"
+          }
+        ],
+        "id": "Elicit.Slot.1660093157828.1082427582913"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Solo respuestas entre las opciones dichas"
+          }
+        ],
+        "id": "Slot.Validation.1466128867287.861588311594.1339402893035"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "solo respuestas entre las opciones dichas"
+          }
+        ],
+        "id": "Elicit.Slot.1466128867287.861588311594"
+      }
+    ]
+  }
+}
